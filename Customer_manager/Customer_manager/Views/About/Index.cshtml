@@ -1,0 +1,63 @@
+﻿@model Customer_manager.Models.Customer_infos
+
+
+
+@*  tabloları buraya koyabiliriz  *@
+<div class="row">
+    <div class="col-lg-12">
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Hakkımda</h5>
+
+                <!-- Default Table -->
+                <table class="table">
+                    <thead>
+                        @if(Model.About.Count ==0){
+                           <th>@Html.ActionLink("Yeni Hakkında Ekle", "Create", "About", null, new { @class = "btn btn-success", role = "button" })</th>
+                        }
+                        
+                    <tr>
+
+
+                        <th scope="col">Fotoğraf</th>    
+                        <th scope="col">İçerik</th>
+                        <th scope="col">İşlemler</th>
+
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var i in Model.About)
+                        {
+                            <tr>
+
+                                <td>
+
+                                    <img src="@i.PhotoPath" alt="Fotoğraf" style="width: 100px; height: auto;" />
+
+
+                                </td>
+                                <td>@i.Description</td>
+
+                                <td>
+                                    <div style="display: inline-block;">
+                                        <a href="/about/edit/@i.ID" class="btn btn-success">Güncelle</a>
+                                    </div>
+                             
+                                </td>
+                            </tr>
+                        }
+
+
+
+                    </tbody>
+                </table>
+
+                <!-- End Default Table Example -->
+            </div>
+        </div>
+
+    </div>
+</div>
+

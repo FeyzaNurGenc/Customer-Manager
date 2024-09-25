@@ -1,0 +1,43 @@
+﻿@model Portfolyo
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Vertical Form</h5>
+
+                <!-- Vertical Form -->
+                <form class="row g-3" method="post" enctype="multipart/form-data">
+                    <input type="hidden" asp-for="ID" class="form-control" id="inputNanme4">
+                    <input type="hidden" asp-for="CustomerInfoId" class="form-control" id="inputNanme4">
+                    <input type="hidden" asp-for="PhotoPath" class="form-control">
+
+                    <div class="col-12">
+                        <label for="inputCategory" class="form-label">Kategori</label>
+                        <input type="text" asp-for="Category" class="form-control" id="inputCategory">
+                    </div>
+                    <div class="col-12">
+                        <label for="inputProjectName" class="form-label">Proje Adı</label>
+                        <input type="text" asp-for="ProjectName" class="form-control" id="inputProjectName">
+                    </div>
+                    <div class="col-12">
+                        <label for="inputPhoto" class="form-label">Fotoğraf</label>
+                        <input type="file" asp-for="Photo" class="form-control" id="inputPhoto">
+                    </div>
+                    <div class="col-12">
+                        <label for="inputDescription" class="form-label">İçerik yazısı</label>
+                        <input type="text" asp-for="Descripton" class="form-control" id="inputDescription" placeholder="İçerik">
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Kaydet</button>
+                        <a href="/admin/index" class="btn btn-secondary">İptal</a>
+                    </div>
+                </form><!-- Vertical Form -->
+            </div>
+        </div>
+    </div>
+</div>
